@@ -1,6 +1,7 @@
 // import Inputs from "./components/inputs/input";
-import UnControlled from './components/uncontrolled-From/un';
+// import UnControlled from './components/uncontrolled-From/un';
 import './App.css';
+import Controlled from './components/controlled/controlled';
 
 
 function App() {
@@ -8,7 +9,10 @@ function App() {
    <div className="App">
        {/* <Inputs></Inputs> */}
 
-       <UnControlled></UnControlled>
+       {/* <UnControlled></UnControlled> */}
+
+
+       <Controlled></Controlled>
    </div>
   );
 }
