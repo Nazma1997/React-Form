@@ -8,7 +8,8 @@ class Inputs extends Component {
         bio: '',
         birthDate: '',
         gender: '',
-        agree: false
+        agree: false,
+        skills: []
       }
 
       handleChange = event => {
@@ -22,13 +23,24 @@ class Inputs extends Component {
         this.setState({agree: event.target.checked})
       }
 
+      handleSkills = event => {
+             if(event.target.checked){
+                  this.setState({skills: [...this.state.skills, event.target.value]});
+             }
+
+             else{
+              const skills = this.state.skills.filter(skill => skill !== event.target.value);
+              this.setState(skills)
+             }
+      } 
+
 
       handleSubmit = ()=> {
         console.log(this.state)
       }
   render(){
 
-    const {name, country, bio, birthDate, agree} = this.state
+    const {name, country, bio, birthDate, agree, skills} = this.state
     return(
       <div className='container'>
            
@@ -48,6 +60,17 @@ class Inputs extends Component {
          
          <input value={birthDate} type="date" onChange={this.handleChange} className='form-control my-2' name='birthDate' />
          
+
+         </div>
+         <div>
+          <h5>Skills:</h5><br />
+                 <input type="checkbox" className='ms-2' name='skills' value='Java' checked={skills.includes('Java')} onChange={this.handleSkills} /> Java
+
+                 <input type="checkbox" className='ms-2' name='skills' value='Javascript' checked={skills.includes('Javascript')} onChange={this.handleSkills} /> Javascript
+   
+                 <input type="checkbox" className='ms-2' name='skills' value='Python' checked={skills.includes('Python')} onChange={this.handleSkills} /> Python
+       
+                 <input type="checkbox" className='ms-2' name='skills' value='GoLang' checked={skills.includes('GoLang')} onChange={this.handleSkills} /> GoLang
 
          </div>
 
