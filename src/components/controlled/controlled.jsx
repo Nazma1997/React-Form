@@ -18,6 +18,8 @@ class Controlled extends Component {
     event.preventDefault()
 
     console.log(this.state);
+    event.target.reset();
+    this.setState({name: '', email: '', password: ''})
 
   }
   render(){

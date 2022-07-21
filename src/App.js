@@ -1,18 +1,21 @@
 // import Inputs from "./components/inputs/input";
 // import UnControlled from './components/uncontrolled-From/un';
 import './App.css';
-import Controlled from './components/controlled/controlled';
+import Split from './components/splite-form/splite';
+// import Controlled from './components/controlled/controlled';
 
 
 function App() {
   return (
-   <div className="App">
+   <div >
        {/* <Inputs></Inputs> */}
 
        {/* <UnControlled></UnControlled> */}
 
 
-       <Controlled></Controlled>
+       {/* <Controlled></Controlled> */}
+
+       <Split></Split>
    </div>
   );
 }
